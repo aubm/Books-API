@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 
@@ -15,6 +16,7 @@ type Library struct {
 	Name    string `json:"name"`
 	Address string `json:"address"`
 	Phone   string `json:"phone"`
+	Books   []Book `json:"-"`
 }
 
 func getLibraries(w http.ResponseWriter, r *http.Request) {
@@ -42,10 +44,8 @@ func createLibrary(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateLibrary(w http.ResponseWriter, r *http.Request) {
-	var library Library
-	requestVars := mux.Vars(r)
-	db.Where("id = ?", requestVars["libraryId"]).Find(&library)
-	if library.ID == "" {
+	library, err := findOneLibrary(mux.Vars(r)["libraryId"])
+	if err != nil {
 		http.Error(w, "", http.StatusNotFound)
 		return
 	}
@@ -70,10 +70,8 @@ func updateLibrary(w http.ResponseWriter, r *http.Request) {
 }
 
 func getOneLibrary(w http.ResponseWriter, r *http.Request) {
-	var library Library
-	requestVars := mux.Vars(r)
-	db.Where("id = ?", requestVars["libraryId"]).Find(&library)
-	if library.ID == "" {
+	library, err := findOneLibrary(mux.Vars(r)["libraryId"])
+	if err != nil {
 		http.Error(w, "", http.StatusNotFound)
 		return
 	}
@@ -81,8 +79,13 @@ func getOneLibrary(w http.ResponseWriter, r *http.Request) {
 }
 
 func deleteLibrary(w http.ResponseWriter, r *http.Request) {
-	requestVars := mux.Vars(r)
-	db.Where("id = ?", requestVars["libraryId"]).Delete(&Library{})
+	library, err := findOneLibrary(mux.Vars(r)["libraryId"])
+	if err != nil {
+		http.Error(w, "", http.StatusNotFound)
+		return
+	}
+	db.Where("library_id = ?", library.ID).Delete(&Book{})
+	db.Delete(&library)
 	w.WriteHeader(http.StatusNoContent)
 }
 
@@ -107,4 +110,13 @@ func validateLibrary(library Library) (errs []string) {
 		errs = append(errs, "The phone is required")
 	}
 	return
+}
+
+func findOneLibrary(libraryID string) (Library, error) {
+	var library Library
+	db.Where("id = ?", libraryID).Find(&library)
+	if library.ID == "" {
+		return Library{}, errors.New("Library not found")
+	}
+	return library, nil
 }

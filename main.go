@@ -26,7 +26,7 @@ func main() {
 	apiRouter.HandleFunc("/libraries/{libraryId}", getOneLibrary).Methods("GET")
 	apiRouter.HandleFunc("/libraries/{libraryId}", deleteLibrary).Methods("DELETE")
 	apiRouter.HandleFunc("/libraries/{libraryId}/books", getBooks).Methods("GET")
-	apiRouter.HandleFunc("/libraries/{libraryId}/books", createBook).Methods("GET")
+	apiRouter.HandleFunc("/libraries/{libraryId}/books", createBook).Methods("POST")
 	apiRouter.HandleFunc("/libraries/{libraryId}/books/{bookId}", updateBook).Methods("PUT")
 	apiRouter.HandleFunc("/libraries/{libraryId}/books/{bookId}", getOneBook).Methods("GET")
 	apiRouter.HandleFunc("/libraries/{libraryId}/books/{bookId}", deleteOneBook).Methods("DELETE")
