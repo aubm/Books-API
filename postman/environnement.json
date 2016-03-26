@@ -1,0 +1,17 @@
+{
+	"id": "ca54fff3-a413-f894-74bb-8ebd235306ef",
+	"name": "Books API - Docker local",
+	"values": [
+		{
+			"key": "domain",
+			"value": "dockerhost:8080",
+			"type": "text",
+			"enabled": true
+		}
+	],
+	"team": null,
+	"timestamp": 1459184674896,
+	"synced": false,
+	"syncedFilename": "",
+	"isDeleted": false
+}

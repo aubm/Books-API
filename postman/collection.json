@@ -1,0 +1,283 @@
+{
+	"id": "eb741874-7a9f-310c-7ce4-0f760b102521",
+	"name": "Books API",
+	"description": "Et quoniam inedia gravi adflictabantur, locum petivere Paleas nomine, vergentem in mare, valido muro firmatum, ubi conduntur nunc usque commeatus distribui militibus omne latus Isauriae defendentibus adsueti. circumstetere igitur hoc munimentum per triduum et trinoctium et cum neque adclivitas ipsa sine discrimine adiri letali, nec cuniculis quicquam geri posset, nec procederet ullum obsidionale commentum, maesti excedunt postrema vi subigente maiora viribus adgressuri.\n\nPostremo ad id indignitatis est ventum, ut cum peregrini ob formidatam haut ita dudum alimentorum inopiam pellerentur ab urbe praecipites, sectatoribus disciplinarum liberalium inpendio paucis sine respiratione ulla extrusis, tenerentur minimarum adseclae veri, quique id simularunt ad tempus, et tria milia saltatricum ne interpellata quidem cum choris totidemque remanerent magistris.\n\nNemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos pagos adventans velut mutato repente consilio ad placidiora deverti.",
+	"order": [
+		"acfef670-b3b7-866e-08b5-60c2a1c1618c"
+	],
+	"folders": [
+		{
+			"id": "a17c87ac-8055-87d9-d88c-79875d951575",
+			"name": "Books",
+			"description": "Et est admodum mirum videre plebem innumeram mentibus ardore quodam infuso cum dimicationum curulium eventu pendentem. haec similiaque memorabile nihil vel serium agi Romae permittunt. ergo redeundum ad textum.",
+			"order": [
+				"0af07136-6c36-6259-b603-225803e3c6fd",
+				"9a3fbdc9-accd-824c-f432-bd5495467c2a",
+				"15b8cf0b-feb3-9bdf-39e4-62da259918f0",
+				"a59796f4-c266-955b-4495-5f1ddf540842",
+				"b335b76c-89b5-dc3c-2faa-33a3cf27baf6"
+			],
+			"owner": "333760",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521"
+		},
+		{
+			"id": "ccb99beb-794c-118d-39f5-ea1ac31d04dd",
+			"name": "Libraries",
+			"description": "Postremo ad id indignitatis est ventum, ut cum peregrini ob formidatam haut ita dudum alimentorum inopiam pellerentur ab urbe praecipites, sectatoribus disciplinarum liberalium inpendio paucis sine respiratione ulla extrusis, tenerentur minimarum adseclae veri, quique id simularunt ad tempus, et tria milia saltatricum ne interpellata quidem cum choris totidemque remanerent magistris.",
+			"order": [
+				"001a384c-f8af-c4ae-5b2e-f7e0db55c0b7",
+				"4757b574-c378-ff7b-9ea0-2f09d78232cc",
+				"066023f6-b975-b82a-d111-adf8ca147c74",
+				"2ea0f810-03b3-cd29-5ea2-2e0d719f58fd",
+				"be3c5a7b-b730-ef84-351d-025bf3b7c347"
+			],
+			"owner": "333760",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521"
+		}
+	],
+	"timestamp": 1458997175745,
+	"owner": "333760",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "001a384c-f8af-c4ae-5b2e-f7e0db55c0b7",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Array of size 3\"] = jsonData.length === 3;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186869206,
+			"name": "Get a list of libraries",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+		},
+		{
+			"id": "066023f6-b975-b82a-d111-adf8ca147c74",
+			"headers": "Content-Type: application/json\ndbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 201\"] = responseCode.code === 201;\ntests[\"Library-Id is present\"] = postman.getResponseHeader(\"Library-Id\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186909752,
+			"name": "Create a new library",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\",\n    \"address\": \"4450 Wisconsin Ave NW, Washington, DC 20016, United-States\",\n    \"phone\": \"+1 202-727-1488\"\n}"
+		},
+		{
+			"id": "0af07136-6c36-6259-b603-225803e3c6fd",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}"
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Array of size 3\"] = jsonData.length === 3;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186598485,
+			"name": "Get one library's books",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+		},
+		{
+			"id": "15b8cf0b-feb3-9bdf-39e4-62da259918f0",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}"
+			},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 201\"] = responseCode.code === 201;\ntests[\"Book-Id is present\"] = postman.getResponseHeader(\"Book-Id\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186712955,
+			"name": "Create a book",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Totally Joe\",\n    \"author\": \"James Howe\",\n    \"publicationDate\": \"2007-01-24T08:56:45.768Z\"\n}"
+		},
+		{
+			"id": "2ea0f810-03b3-cd29-5ea2-2e0d719f58fd",
+			"headers": "Content-Type: application/json\ndbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}"
+			},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\";\ntests[\"Has expected name\"] = jsonData.name === \"Library of Congress\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186979975,
+			"name": "Update a library",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+		},
+		{
+			"id": "4757b574-c378-ff7b-9ea0-2f09d78232cc",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}"
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186889490,
+			"name": "Get one library",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+		},
+		{
+			"id": "9a3fbdc9-accd-824c-f432-bd5495467c2a",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books/:bookId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));\npostman.setGlobalVariable(\"bookId\", (data.bookId ? data.bookId : \"57740c24-f386-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}",
+				"bookId": "{{bookId}}"
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"57740c24-f386-11e5-9280-8438355dc0e0\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186646951,
+			"name": "Get one book",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+		},
+		{
+			"id": "a59796f4-c266-955b-4495-5f1ddf540842",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books/:bookId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));\npostman.setGlobalVariable(\"bookId\", (data.bookId ? data.bookId : \"57740c24-f386-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}",
+				"bookId": "{{bookId}}"
+			},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"57740c24-f386-11e5-9280-8438355dc0e0\";\ntests[\"Has expected name\"] = jsonData.name === \"The lord of the rings\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186792019,
+			"name": "Update a book",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"The lord of the rings\",\n    \"author\": \"J. R. R. Tolkien\",\n    \"publicationDate\": \"2015-09-15T23:47:32.903Z\"\n}"
+		},
+		{
+			"id": "acfef670-b3b7-866e-08b5-60c2a1c1618c",
+			"headers": "dbscripts: reset|data\n",
+			"url": "http://{{domain}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459020290111,
+			"name": "Reset database",
+			"description": "",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "b335b76c-89b5-dc3c-2faa-33a3cf27baf6",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books/:bookId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));\npostman.setGlobalVariable(\"bookId\", (data.bookId ? data.bookId : \"57740c24-f386-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}",
+				"bookId": "{{bookId}}"
+			},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186836750,
+			"name": "Delete a book",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+		},
+		{
+			"id": "be3c5a7b-b730-ef84-351d-025bf3b7c347",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}"
+			},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459186993217,
+			"name": "Delete a library",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+		}
+	]
+}
