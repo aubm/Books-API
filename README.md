@@ -3,6 +3,8 @@
 ## What is it?
 
 A fake HTTP API built as a support for the developpement of Postmanerator.
+The generated documentation [is available here](http://aubm.github.io/Books-API/).
+
 It also demonstrates how you can use [Newman](https://github.com/postmanlabs/newman) to automate
 integration tests.
 

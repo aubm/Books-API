@@ -15,6 +15,10 @@ env:
     - TRAVIS_NODE_VERSION="0.12"
     - TRAVIS_DOCKER_VERSION="1.10.1-0~trusty"
     - TRAVIS_DOCKER_COMPOSE_VERSION="1.6.2"
+    - TRAVIS_POSTMANERATOR_VERSION="v0.4.0"
+    - POSTMANERATOR_PATH="/tmp/postmanerator"
+    - GITHUB_REPO: "aubm/Books-API"
+    - secure: "g2UTDqKPCjE2bmk3v1jy5FWHHVM4EK/Qpbw4NuQTGO40sjGtaxxRY/lyPnzfl4wfEAlQEXmWEOY/m5QAP7hsz8Zxrvn+cODb+j/Jt+q9EpOQuak+3Xf1ZWKeJjrMqFvkHnt0athQ1HzkuLqAbAg4BXUHIDUtKCTfu2q7sTzGQvngOjjrjYk1CQpYhZ46ObVFdB9jzNwYtfwVCypN0UXd2+W6qEEyE9fQcU6dUjjCrVz+1OQcgxtdz71dIHoqXUTVphxUKeTj/NQnCzTf7oJUjxKsC1HPShxiHIFE8EXaExQYM7Cr9PNxbovAo8KCZYm52aEQAXrqSt1vso3xyKQ3DgfFf8IiAFCpM17qIQ70qRUVTS5BjSWEkmfM6elxNRPqYSQ9A+Yx/edSrF4ZLXYcRWwMFE+bfU7f1UrCdg4kEZw+kbRECTB7HKzFfYm28/y1gM2FBSqJXPj5awjINARHJ0LfCXZS1qn8vxaTA0prR/wLsQKLfKT4Pv6glIPg5YGf5G7W0xBMCWoKmh9lDD1YXMbBFp5kn3BhVLwDD4knyyXf7hWNS1Fc3kBbS7h8VvzXaqbgRDC/Slhbg7B3JxCndZN6tEw87hHlfef5aR2h52FvKQKx5/VKDhYQaQ6GqqCVd2cIJS6VNNVAHnDAXouamYHrIox6Pj4gWI5gMFn0yug="
 
 before_install:
   # install newman
@@ -30,9 +34,17 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - docker-compose version
+  # install postmanerator
+  - curl -L https://github.com/aubm/postmanerator/releases/download/${TRAVIS_POSTMANERATOR_VERSION}/postmanerator_linux_amd64 > postmanerator
+  - chmod +x postmanerator
+  - sudo mv postmanerator /usr/local/bin
+  - postmanerator themes get default
+  - postmanerator themes get markdown
+  - postmanerator themes list
 
 script:
   - ./run-tests.sh
+  - ./deploy.sh
 
 addons:
   hosts:
