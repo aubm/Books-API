@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/aubm/Books-API.svg?branch=master)](https://travis-ci.org/aubm/Books-API)
+
 ## What is it?
 
 A fake HTTP API built as a support for the developpement of Postmanerator.
