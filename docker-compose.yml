@@ -2,7 +2,8 @@ version: "2"
 
 services:
   app:
-    image: aubm/books-api
+    build:
+      context: .
     ports:
       - 8080:8080
     env_file:
