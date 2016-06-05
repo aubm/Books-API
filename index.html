@@ -1,0 +1,1395 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Books API</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/darkula.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>body {
+    position: relative;
+}
+
+h1 {
+    margin-top: 5px;
+}
+
+h1, h2, h3, h4 {
+    color: #2b2b2b;
+}
+
+h2:after {
+    content: ' ';
+}
+
+h5 {
+    font-weight: bold;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    display: none;
+    position: absolute;
+    margin-left: 8px;
+}
+
+h1:hover a, h2:hover a, h3:hover a, h4:hover a, h5:hover a, h6:hover a {
+    color: #a5a5a5;
+    display: initial;
+}
+
+.nav.nav-tabs > li > a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.tab-content {
+    padding-top: 8px;
+}
+
+.table {
+    margin-bottom: 8px;
+}
+
+pre {
+    border-radius: 0px;
+    border: none;
+}
+
+pre code {
+    margin: -9.5px;
+}
+
+.request {
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.response-text-sample {
+    padding: 0px !important;
+}
+
+.response-text-sample pre {
+    margin-bottom: 0px;
+}
+
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #2b2b2b;
+    padding-top: 20px;
+}
+
+#sidebar-wrapper ul {
+    width: 250px;
+}
+
+#sidebar-wrapper ul li {
+    margin-right: 10px;
+}
+
+#sidebar-wrapper ul li a:hover {
+    background: inherit;
+    text-decoration: none;
+}
+
+#sidebar-wrapper ul li a {
+    display: block;
+    color: #ECF0F1;
+    padding: 6px 15px;
+}
+
+#sidebar-wrapper ul li ul {
+    padding-left: 25px;
+}
+
+#sidebar-wrapper ul li ul li a {
+    padding: 1px 0px;
+}
+
+#sidebar-wrapper ul li a:hover,
+#sidebar-wrapper ul li a:focus {
+    color: #e0c46c;
+    border-right: solid 1px #e0c46c;
+}
+
+#sidebar-wrapper ul li.active > a {
+    color: #e0c46c;
+    border-right: solid 3px #e0c46c;
+}
+
+#sidebar-wrapper ul li:not(.active) ul {
+    display: none;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px 15px 15px 250px;
+}
+</style>
+</head>
+<body data-spy="scroll" data-target=".scrollspy">
+<div id="sidebar-wrapper">
+    <div class="scrollspy">
+    <ul id="main-menu" data-spy="affix" class="nav">
+        <li>
+            <a href="#doc-general-notes">General notes</a>
+        </li>
+        
+        <li>
+            <a href="#doc-api-structures">API structures</a>
+            <ul>
+                
+                <li>
+                    <a href="#struct-Book">Book</a>
+                </li>
+                
+                <li>
+                    <a href="#struct-Library">Library</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li>
+            <a href="#doc-api-detail">API detail</a>
+        </li>
+        
+        <li>
+            <a href="#folder-books">Books</a>
+            <ul>
+                
+
+                
+                <li>
+                    <a href="#request-get-one-library-s-books">Get one library's books</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                    <a href="#request-get-one-book">Get one book</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                    <a href="#request-create-a-book">Create a book</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                    <a href="#request-update-a-book">Update a book</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                    <a href="#request-delete-a-book">Delete a book</a>
+                </li>
+                
+
+                
+            </ul>
+        </li>
+        
+        <li>
+            <a href="#folder-libraries">Libraries</a>
+            <ul>
+                
+
+                
+                <li>
+                    <a href="#request-get-a-list-of-libraries">Get a list of libraries</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                    <a href="#request-get-one-library">Get one library</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                    <a href="#request-create-a-new-library">Create a new library</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                    <a href="#request-update-a-library">Update a library</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                    <a href="#request-delete-a-library">Delete a library</a>
+                </li>
+                
+
+                
+            </ul>
+        </li>
+        
+    </ul>
+</div>
+
+</div>
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Books API</h1>
+
+                <h2 id="doc-general-notes">
+                    General notes
+                    <a href="#doc-general-notes"><i class="glyphicon glyphicon-link"></i></a>
+                </h2>
+
+                <p>Et quoniam inedia gravi adflictabantur, locum petivere Paleas nomine, vergentem in mare, valido muro firmatum, ubi conduntur nunc usque commeatus distribui militibus omne latus Isauriae defendentibus adsueti. circumstetere igitur hoc munimentum per triduum et trinoctium et cum neque adclivitas ipsa sine discrimine adiri letali, nec cuniculis quicquam geri posset, nec procederet ullum obsidionale commentum, maesti excedunt postrema vi subigente maiora viribus adgressuri.</p>
+
+<p>Postremo ad id indignitatis est ventum, ut cum peregrini ob formidatam haut ita dudum alimentorum inopiam pellerentur ab urbe praecipites, sectatoribus disciplinarum liberalium inpendio paucis sine respiratione ulla extrusis, tenerentur minimarum adseclae veri, quique id simularunt ad tempus, et tria milia saltatricum ne interpellata quidem cum choris totidemque remanerent magistris.</p>
+
+<p>Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos pagos adventans velut mutato repente consilio ad placidiora deverti.</p>
+
+
+                
+                <h2 id="doc-api-structures">
+                    API structures
+                    <a href="#doc-api-structures"><i class="glyphicon glyphicon-link"></i></a>
+                </h2>
+
+                
+
+                    <h3 id="struct-Book">
+                        Book
+                        <a href="#struct-Book"><i class="glyphicon glyphicon-link"></i></a>
+                    </h3>
+
+                    <p>Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet</p>
+
+                    <table class="table table-bordered">
+                    
+                        <tr>
+                            <th>id</th>
+                            <td>UUID</td>
+                            <td>Coluntur tamen simulatione dumtaxat ad tempus</td>
+                        </tr>
+                    
+                        <tr>
+                            <th>name</th>
+                            <td>string</td>
+                            <td>Quod si forte, ut fit plerumque</td>
+                        </tr>
+                    
+                        <tr>
+                            <th>author</th>
+                            <td>string</td>
+                            <td>Um intellegitur quam fuerint inopes amicorum</td>
+                        </tr>
+                    
+                        <tr>
+                            <th>publicationDate</th>
+                            <td>ISO datetime</td>
+                            <td>Quod Tarquinium dixisse ferunt</td>
+                        </tr>
+                    
+                    </table>
+
+                
+
+                    <h3 id="struct-Library">
+                        Library
+                        <a href="#struct-Library"><i class="glyphicon glyphicon-link"></i></a>
+                    </h3>
+
+                    <p>Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet</p>
+
+                    <table class="table table-bordered">
+                    
+                        <tr>
+                            <th>id</th>
+                            <td>UUID</td>
+                            <td>Coluntur tamen simulatione dumtaxat ad tempus</td>
+                        </tr>
+                    
+                        <tr>
+                            <th>name</th>
+                            <td>string</td>
+                            <td>Quod si forte, ut fit plerumque</td>
+                        </tr>
+                    
+                        <tr>
+                            <th>address</th>
+                            <td>string</td>
+                            <td>Um intellegitur quam fuerint inopes amicorum</td>
+                        </tr>
+                    
+                        <tr>
+                            <th>phone</th>
+                            <td>string</td>
+                            <td>Quod Tarquinium dixisse ferunt</td>
+                        </tr>
+                    
+                    </table>
+
+                
+
+                
+
+                <h2 id="doc-api-detail">
+                    API detail
+                    <a href="#doc-api-detail"><i class="glyphicon glyphicon-link"></i></a>
+                </h2>
+
+                
+                <div class="endpoints-group">
+                    <h3 id="folder-books">
+                        Books
+                        <a href="#folder-books"><i class="glyphicon glyphicon-link"></i></a>
+                    </h3>
+
+                    <div><p>Et est admodum mirum videre plebem innumeram mentibus ardore quodam infuso cum dimicationum curulium eventu pendentem. haec similiaque memorabile nihil vel serium agi Romae permittunt. ergo redeundum ad textum.</p>
+</div>
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-get-one-library-s-books">
+                                Get one library's books
+                                <a href="#request-get-one-library-s-books"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-get-one-library-s-books-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-get-one-library-s-books-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-one-library-s-books-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET "http://{{domain}}/api/libraries/:libraryId/books"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-one-library-s-books-example-http">
+                                        <pre><code class="hljs http">GET /api/libraries/:libraryId/books HTTP/1.1
+Host: {{domain}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-get-one-library-s-books-responses-12173db5-06c0-777a-b447-016008d9239f" data-toggle="tab">
+                                            
+                                                Response
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-get-one-library-s-books-responses-12173db5-06c0-777a-b447-016008d9239f">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                            
+                                            
+                                                
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>[
+    {
+        "id": "57740c24-f386-11e5-9280-8438355dc0e0",
+        "name": "All the Rage",
+        "author": "Courtney Summers",
+        "publicationDate": "2015-04-14T12:47:33Z"
+    },
+    {
+        "id": "96fc9801-f386-11e5-9280-8438355dc0e0",
+        "name": "Dairy queen",
+        "author": "Catherine Gilbert Murdock",
+        "publicationDate": "2006-05-22T11:23:13Z"
+    },
+    {
+        "id": "cc4f6dbd-f386-11e5-9280-8438355dc0e0",
+        "name": "Kissing in America",
+        "author": "Margo Rabb",
+        "publicationDate": "2015-05-26T16:13:08Z"
+    }
+]</code></pre>
+                                                </td></tr>
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-get-one-book">
+                                Get one book
+                                <a href="#request-get-one-book"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-get-one-book-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-get-one-book-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-one-book-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET "http://{{domain}}/api/libraries/:libraryId/books/:bookId"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-one-book-example-http">
+                                        <pre><code class="hljs http">GET /api/libraries/:libraryId/books/:bookId HTTP/1.1
+Host: {{domain}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-get-one-book-responses-4a6f7810-0b5a-9db4-fe77-0c84bebad35d" data-toggle="tab">
+                                            
+                                                Default
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-get-one-book-responses-746e556a-cf94-c117-7afd-3bd5155c65fe" data-toggle="tab">
+                                            
+                                                Invalid book id
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-get-one-book-responses-4a6f7810-0b5a-9db4-fe77-0c84bebad35d">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                            
+                                            
+                                                
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "id": "57740c24-f386-11e5-9280-8438355dc0e0",
+    "name": "All the Rage",
+    "author": "Courtney Summers",
+    "publicationDate": "2015-04-14T12:47:33Z"
+}</code></pre>
+                                                </td></tr>
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-get-one-book-responses-746e556a-cf94-c117-7afd-3bd5155c65fe">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>404 Not Found</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-create-a-book">
+                                Create a book
+                                <a href="#request-create-a-book"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-create-a-book-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-create-a-book-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-create-a-book-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -d '{
+    "name": "Totally Joe",
+    "author": "James Howe",
+    "publicationDate": "2007-01-24T08:56:45.768Z"
+}' "http://{{domain}}/api/libraries/:libraryId/books"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-create-a-book-example-http">
+                                        <pre><code class="hljs http">POST /api/libraries/:libraryId/books HTTP/1.1
+Host: {{domain}}
+
+{
+    "name": "Totally Joe",
+    "author": "James Howe",
+    "publicationDate": "2007-01-24T08:56:45.768Z"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-create-a-book-responses-e308c333-105f-3886-f215-d292a9553a74" data-toggle="tab">
+                                            
+                                                Default
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-create-a-book-responses-046e0b59-3776-1bd3-b5ec-bb0fac7ec59a" data-toggle="tab">
+                                            
+                                                Incomplete data
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-create-a-book-responses-33a0251d-eeaa-1341-4d97-a62e111c2fc0" data-toggle="tab">
+                                            
+                                                Invalid JSON input
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-create-a-book-responses-e308c333-105f-3886-f215-d292a9553a74">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>201 Created</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Book-Id</th><td>16f1445d-f52e-11e5-84ab-0242ac140002</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-create-a-book-responses-046e0b59-3776-1bd3-b5ec-bb0fac7ec59a">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>400 Bad Request</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            
+                                                
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>[
+    "The author is required"
+]</code></pre>
+                                                </td></tr>
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-create-a-book-responses-33a0251d-eeaa-1341-4d97-a62e111c2fc0">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>400 Bad Request</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                            
+                                            
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-update-a-book">
+                                Update a book
+                                <a href="#request-update-a-book"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-update-a-book-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-update-a-book-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-update-a-book-example-curl">
+                                        <pre><code class="hljs curl">curl -X PUT -d '{
+    "name": "The lord of the rings",
+    "author": "J. R. R. Tolkien",
+    "publicationDate": "2015-09-15T23:47:32.903Z"
+}' "http://{{domain}}/api/libraries/:libraryId/books/:bookId"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-update-a-book-example-http">
+                                        <pre><code class="hljs http">PUT /api/libraries/:libraryId/books/:bookId HTTP/1.1
+Host: {{domain}}
+
+{
+    "name": "The lord of the rings",
+    "author": "J. R. R. Tolkien",
+    "publicationDate": "2015-09-15T23:47:32.903Z"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-update-a-book-responses-b77d0e3e-451f-313d-e93a-2077bd4c2796" data-toggle="tab">
+                                            
+                                                Default
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-update-a-book-responses-3a886154-da32-8842-d463-7a064d02c46e" data-toggle="tab">
+                                            
+                                                Invalid JSON input
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-update-a-book-responses-b77d0e3e-451f-313d-e93a-2077bd4c2796">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                            
+                                            
+                                                
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "id": "57740c24-f386-11e5-9280-8438355dc0e0",
+    "name": "The lord of the rings",
+    "author": "J. R. R. Tolkien",
+    "publicationDate": "2015-09-15T23:47:32.903Z"
+}</code></pre>
+                                                </td></tr>
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-update-a-book-responses-3a886154-da32-8842-d463-7a064d02c46e">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>400 Bad Request</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                            
+                                            
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-delete-a-book">
+                                Delete a book
+                                <a href="#request-delete-a-book"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-delete-a-book-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-delete-a-book-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-delete-a-book-example-curl">
+                                        <pre><code class="hljs curl">curl -X DELETE "http://{{domain}}/api/libraries/:libraryId/books/:bookId"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-delete-a-book-example-http">
+                                        <pre><code class="hljs http">DELETE /api/libraries/:libraryId/books/:bookId HTTP/1.1
+Host: {{domain}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-delete-a-book-responses-80db4efa-6edf-b38c-8ca8-919572b8c31d" data-toggle="tab">
+                                            
+                                                Default
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-delete-a-book-responses-e4058dd3-e165-9e6a-4b8e-7699e08784a2" data-toggle="tab">
+                                            
+                                                Invalid book id
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-delete-a-book-responses-80db4efa-6edf-b38c-8ca8-919572b8c31d">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>204 No Content</td></tr>
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-delete-a-book-responses-e4058dd3-e165-9e6a-4b8e-7699e08784a2">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>404 Not Found</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                </div>
+                
+                <div class="endpoints-group">
+                    <h3 id="folder-libraries">
+                        Libraries
+                        <a href="#folder-libraries"><i class="glyphicon glyphicon-link"></i></a>
+                    </h3>
+
+                    <div><p>Postremo ad id indignitatis est ventum, ut cum peregrini ob formidatam haut ita dudum alimentorum inopiam pellerentur ab urbe praecipites, sectatoribus disciplinarum liberalium inpendio paucis sine respiratione ulla extrusis, tenerentur minimarum adseclae veri, quique id simularunt ad tempus, et tria milia saltatricum ne interpellata quidem cum choris totidemque remanerent magistris.</p>
+</div>
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-get-a-list-of-libraries">
+                                Get a list of libraries
+                                <a href="#request-get-a-list-of-libraries"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-get-a-list-of-libraries-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-get-a-list-of-libraries-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-a-list-of-libraries-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET "http://{{domain}}/api/libraries"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-a-list-of-libraries-example-http">
+                                        <pre><code class="hljs http">GET /api/libraries HTTP/1.1
+Host: {{domain}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-get-a-list-of-libraries-responses-c494fdca-7ee0-0a12-62a4-3d3d19594b17" data-toggle="tab">
+                                            
+                                                Response
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-get-a-list-of-libraries-responses-c494fdca-7ee0-0a12-62a4-3d3d19594b17">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                            
+                                            
+                                                
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>[
+    {
+        "id": "a7c1d1d9-f385-11e5-9280-8438355dc0e0",
+        "name": "New York Public Library",
+        "address": "5th Ave at 42nd St, New York, NY 10018, United-States",
+        "phone": "+1 917-275-6975"
+    },
+    {
+        "id": "cdc100c8-f385-11e5-9280-8438355dc0e0",
+        "name": "Library of Congress",
+        "address": "101 Independence Ave SE, Washington, DC 20540, United-States",
+        "phone": "+1 202-707-5000"
+    },
+    {
+        "id": "f023a6c9-f385-11e5-9280-8438355dc0e0",
+        "name": "Tenley-Friendship Neighborhood Library",
+        "address": "4450 Wisconsin Ave NW, Washington, DC 20016, United-States",
+        "phone": "+1 202-727-1488"
+    }
+]</code></pre>
+                                                </td></tr>
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-get-one-library">
+                                Get one library
+                                <a href="#request-get-one-library"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-get-one-library-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-get-one-library-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-one-library-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET "http://{{domain}}/api/libraries/:libraryId"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-one-library-example-http">
+                                        <pre><code class="hljs http">GET /api/libraries/:libraryId HTTP/1.1
+Host: {{domain}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-get-one-library-responses-356d058f-8c25-576d-8564-c10572d89dea" data-toggle="tab">
+                                            
+                                                Default
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-get-one-library-responses-f624c6e9-71d5-5e3f-d863-26774caa77a1" data-toggle="tab">
+                                            
+                                                Invalid library id
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-get-one-library-responses-356d058f-8c25-576d-8564-c10572d89dea">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                            
+                                            
+                                                
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "id": "a7c1d1d9-f385-11e5-9280-8438355dc0e0",
+    "name": "New York Public Library",
+    "address": "5th Ave at 42nd St, New York, NY 10018, United-States",
+    "phone": "+1 917-275-6975"
+}</code></pre>
+                                                </td></tr>
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-get-one-library-responses-f624c6e9-71d5-5e3f-d863-26774caa77a1">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>404 Not Found</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-create-a-new-library">
+                                Create a new library
+                                <a href="#request-create-a-new-library"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-create-a-new-library-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-create-a-new-library-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-create-a-new-library-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -H "Content-Type: application/json" -d '{
+    "name": "Tenley-Friendship Neighborhood Library",
+    "address": "4450 Wisconsin Ave NW, Washington, DC 20016, United-States",
+    "phone": "+1 202-727-1488"
+}' "http://{{domain}}/api/libraries"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-create-a-new-library-example-http">
+                                        <pre><code class="hljs http">POST /api/libraries HTTP/1.1
+Host: {{domain}}
+Content-Type: application/json
+
+{
+    "name": "Tenley-Friendship Neighborhood Library",
+    "address": "4450 Wisconsin Ave NW, Washington, DC 20016, United-States",
+    "phone": "+1 202-727-1488"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-create-a-new-library-responses-2f23fb7b-bdd1-fafd-3aee-ab51d304f2d9" data-toggle="tab">
+                                            
+                                                Default
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-create-a-new-library-responses-e94b0309-040d-4c6c-5f85-7e2c592f4ee8" data-toggle="tab">
+                                            
+                                                Invalid input data
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-create-a-new-library-responses-7039e433-1ec9-6f26-2ecc-023c6aa8c4cd" data-toggle="tab">
+                                            
+                                                Invalid JSON input
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-create-a-new-library-responses-2f23fb7b-bdd1-fafd-3aee-ab51d304f2d9">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>201 Created</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Library-Id</th><td>2934ee4a-f52f-11e5-84ab-0242ac140002</td></tr>
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-create-a-new-library-responses-e94b0309-040d-4c6c-5f85-7e2c592f4ee8">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>400 Bad Request</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            
+                                                
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>[
+    "The address is required",
+    "The phone is required"
+]</code></pre>
+                                                </td></tr>
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-create-a-new-library-responses-7039e433-1ec9-6f26-2ecc-023c6aa8c4cd">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>400 Bad Request</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                            
+                                            
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-update-a-library">
+                                Update a library
+                                <a href="#request-update-a-library"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-update-a-library-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-update-a-library-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-update-a-library-example-curl">
+                                        <pre><code class="hljs curl">curl -X PUT -H "Content-Type: application/json" -d '{
+    "name": "Library of Congress",
+    "address": "101 Independence Ave SE, Washington, DC 20540, United-States",
+    "phone": "+1 202-707-5000"
+}' "http://{{domain}}/api/libraries/:libraryId"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-update-a-library-example-http">
+                                        <pre><code class="hljs http">PUT /api/libraries/:libraryId HTTP/1.1
+Host: {{domain}}
+Content-Type: application/json
+
+{
+    "name": "Library of Congress",
+    "address": "101 Independence Ave SE, Washington, DC 20540, United-States",
+    "phone": "+1 202-707-5000"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-update-a-library-responses-0789f34a-c7de-d852-9638-17937c7ef8a0" data-toggle="tab">
+                                            
+                                                Default
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-update-a-library-responses-b6ff9ff8-bee8-a3b2-3701-1577d244f71f" data-toggle="tab">
+                                            
+                                                Invalid JSON input
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-update-a-library-responses-0789f34a-c7de-d852-9638-17937c7ef8a0">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>application/json</td></tr>
+                                            
+                                            
+                                                
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "id": "a7c1d1d9-f385-11e5-9280-8438355dc0e0",
+    "name": "Library of Congress",
+    "address": "101 Independence Ave SE, Washington, DC 20540, United-States",
+    "phone": "+1 202-707-5000"
+}</code></pre>
+                                                </td></tr>
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-update-a-library-responses-b6ff9ff8-bee8-a3b2-3701-1577d244f71f">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>400 Bad Request</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                            
+                                            
+                                                
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                        
+                        <div class="request">
+
+                            <h4 id="request-delete-a-library">
+                                Delete a library
+                                <a href="#request-delete-a-library"><i class="glyphicon glyphicon-link"></i></a>
+                            </h4>
+
+                            <div><p>Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#request-delete-a-library-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation"><a href="#request-delete-a-library-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-delete-a-library-example-curl">
+                                        <pre><code class="hljs curl">curl -X DELETE -d '{
+    "name": "Library of Congress",
+    "address": "101 Independence Ave SE, Washington, DC 20540, United-States",
+    "phone": "+1 202-707-5000"
+}' "http://{{domain}}/api/libraries/:libraryId"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-delete-a-library-example-http">
+                                        <pre><code class="hljs http">DELETE /api/libraries/:libraryId HTTP/1.1
+Host: {{domain}}
+
+{
+    "name": "Library of Congress",
+    "address": "101 Independence Ave SE, Washington, DC 20540, United-States",
+    "phone": "+1 202-707-5000"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    
+                                    <li role="presentation" class="active">
+                                        <a href="#request-delete-a-library-responses-ef72279d-3556-79da-0658-eb56a4b2b13a" data-toggle="tab">
+                                            
+                                                Default
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                    <li role="presentation">
+                                        <a href="#request-delete-a-library-responses-303b0c1c-e94d-506a-c9bb-e679557d291e" data-toggle="tab">
+                                            
+                                                Invalid library id
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    
+                                    <div class="tab-pane active" id="request-delete-a-library-responses-ef72279d-3556-79da-0658-eb56a4b2b13a">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>204 No Content</td></tr>
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="request-delete-a-library-responses-303b0c1c-e94d-506a-c9bb-e679557d291e">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>404 Not Found</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">Content-Type</th><td>text/plain; charset=utf-8</td></tr>
+                                            
+                                            <tr><th style="width: 20%;">X-Content-Type-Options</th><td>nosniff</td></tr>
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+
+                            <hr>
+                        </div>
+                        
+
+                    
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
