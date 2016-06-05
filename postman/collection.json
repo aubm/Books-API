@@ -1,35 +1,33 @@
 {
-	"id": "eb741874-7a9f-310c-7ce4-0f760b102521",
+	"id": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
 	"name": "Books API",
 	"description": "Et quoniam inedia gravi adflictabantur, locum petivere Paleas nomine, vergentem in mare, valido muro firmatum, ubi conduntur nunc usque commeatus distribui militibus omne latus Isauriae defendentibus adsueti. circumstetere igitur hoc munimentum per triduum et trinoctium et cum neque adclivitas ipsa sine discrimine adiri letali, nec cuniculis quicquam geri posset, nec procederet ullum obsidionale commentum, maesti excedunt postrema vi subigente maiora viribus adgressuri.\n\nPostremo ad id indignitatis est ventum, ut cum peregrini ob formidatam haut ita dudum alimentorum inopiam pellerentur ab urbe praecipites, sectatoribus disciplinarum liberalium inpendio paucis sine respiratione ulla extrusis, tenerentur minimarum adseclae veri, quique id simularunt ad tempus, et tria milia saltatricum ne interpellata quidem cum choris totidemque remanerent magistris.\n\nNemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos pagos adventans velut mutato repente consilio ad placidiora deverti.",
-	"order": [
-		"acfef670-b3b7-866e-08b5-60c2a1c1618c"
-	],
+	"order": [],
 	"folders": [
 		{
-			"id": "a17c87ac-8055-87d9-d88c-79875d951575",
+			"id": "f669a26d-dca0-b96f-4464-edfc3d1811c9",
 			"name": "Books",
 			"description": "Et est admodum mirum videre plebem innumeram mentibus ardore quodam infuso cum dimicationum curulium eventu pendentem. haec similiaque memorabile nihil vel serium agi Romae permittunt. ergo redeundum ad textum.",
 			"order": [
-				"0af07136-6c36-6259-b603-225803e3c6fd",
-				"9a3fbdc9-accd-824c-f432-bd5495467c2a",
-				"15b8cf0b-feb3-9bdf-39e4-62da259918f0",
-				"a59796f4-c266-955b-4495-5f1ddf540842",
-				"b335b76c-89b5-dc3c-2faa-33a3cf27baf6"
+				"bb6d8cfa-22fc-1711-98ee-d09c751aa690",
+				"8245f88f-0b48-cd52-a856-11704c707cec",
+				"cac1eeba-a7b3-4297-1505-7878995814f4",
+				"4d044bc7-0eb2-1155-b491-411213691f05",
+				"2d41518c-5e9b-1f09-e5e5-6eef43f13613"
 			],
 			"owner": "333760",
 			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521"
 		},
 		{
-			"id": "ccb99beb-794c-118d-39f5-ea1ac31d04dd",
+			"id": "ab2de03a-6403-08fa-52f0-45988e212b53",
 			"name": "Libraries",
 			"description": "Postremo ad id indignitatis est ventum, ut cum peregrini ob formidatam haut ita dudum alimentorum inopiam pellerentur ab urbe praecipites, sectatoribus disciplinarum liberalium inpendio paucis sine respiratione ulla extrusis, tenerentur minimarum adseclae veri, quique id simularunt ad tempus, et tria milia saltatricum ne interpellata quidem cum choris totidemque remanerent magistris.",
 			"order": [
-				"001a384c-f8af-c4ae-5b2e-f7e0db55c0b7",
-				"4757b574-c378-ff7b-9ea0-2f09d78232cc",
-				"066023f6-b975-b82a-d111-adf8ca147c74",
-				"2ea0f810-03b3-cd29-5ea2-2e0d719f58fd",
-				"be3c5a7b-b730-ef84-351d-025bf3b7c347"
+				"0d5cf21e-4090-607c-6f0b-d345c432339b",
+				"e32a5c08-f9ef-d803-e80c-38954dddf287",
+				"94dbecc2-f04f-1d14-38b5-e3c612ad9300",
+				"09357fe9-aea6-9284-3cc4-dc87bcb9ea29",
+				"8761d62b-edb8-affb-8140-39ea021b5989"
 			],
 			"owner": "333760",
 			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521"
@@ -41,681 +39,7 @@
 	"public": false,
 	"requests": [
 		{
-			"id": "001a384c-f8af-c4ae-5b2e-f7e0db55c0b7",
-			"headers": "dbscripts: {{dbscripts}}\n",
-			"url": "http://{{domain}}/api/libraries",
-			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));",
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Array of size 3\"] = jsonData.length === 3;",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1459186869206,
-			"name": "Get a list of libraries",
-			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
-			"responses": [
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 23,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "537",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:49:48 GMT",
-							"description": "The date and time that the message was sent"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "[{\"id\":\"a7c1d1d9-f385-11e5-9280-8438355dc0e0\",\"name\":\"New York Public Library\",\"address\":\"5th Ave at 42nd St, New York, NY 10018, United-States\",\"phone\":\"+1 917-275-6975\"},{\"id\":\"cdc100c8-f385-11e5-9280-8438355dc0e0\",\"name\":\"Library of Congress\",\"address\":\"101 Independence Ave SE, Washington, DC 20540, United-States\",\"phone\":\"+1 202-707-5000\"},{\"id\":\"f023a6c9-f385-11e5-9280-8438355dc0e0\",\"name\":\"Tenley-Friendship Neighborhood Library\",\"address\":\"4450 Wisconsin Ave NW, Washington, DC 20016, United-States\",\"phone\":\"+1 202-727-1488\"}]",
-					"language": "javascript",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "7a67e2ee-b7f0-e78e-859e-dd98ec1298b2",
-					"name": "Default",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "76c0c761-5259-ef18-62f7-51e903589659"
-							}
-						],
-						"data": "",
-						"method": "GET",
-						"dataMode": "raw"
-					}
-				}
-			],
-			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
-		},
-		{
-			"id": "066023f6-b975-b82a-d111-adf8ca147c74",
-			"headers": "Content-Type: application/json\ndbscripts: {{dbscripts}}\n",
-			"url": "http://{{domain}}/api/libraries",
-			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));",
-			"pathVariables": {},
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "tests[\"Status code is 201\"] = responseCode.code === 201;\ntests[\"Library-Id is present\"] = postman.getResponseHeader(\"Library-Id\");",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1459201903204,
-			"name": "Create a new library",
-			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
-			"responses": [
-				{
-					"status": "",
-					"responseCode": {
-						"code": 201,
-						"name": "Created",
-						"detail": "The request has been fulfilled and resulted in a new resource being created."
-					},
-					"time": 13,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "0",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:51:00 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Library-Id",
-							"key": "Library-Id",
-							"value": "2934ee4a-f52f-11e5-84ab-0242ac140002",
-							"description": "Custom header"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "48ec1401-f27e-aba4-db2e-f0fcb09499e4",
-					"name": "Default",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries",
-						"headers": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"enabled": true,
-								"description": "The mime type of this content"
-							},
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "a5b06b3b-62ef-fa32-48b3-73bf0a125f94"
-							}
-						],
-						"data": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\",\n    \"address\": \"4450 Wisconsin Ave NW, Washington, DC 20016, United-States\",\n    \"phone\": \"+1 202-727-1488\"\n}",
-						"method": "POST",
-						"dataMode": "raw"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 400,
-						"name": "Bad Request",
-						"detail": "The request cannot be fulfilled due to bad syntax."
-					},
-					"time": 23,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "51",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:51:15 GMT",
-							"description": "The date and time that the message was sent"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "[\"The address is required\",\"The phone is required\"]",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "d62ecdd2-1728-1bd0-d9bf-d1b8a8f75dd4",
-					"name": "Invalid input data",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries",
-						"headers": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"enabled": true,
-								"description": "The mime type of this content"
-							},
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "c1ea68fa-acc5-3787-f58a-4c9216499e6f"
-							}
-						],
-						"data": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\"\n}",
-						"method": "POST",
-						"dataMode": "raw"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 400,
-						"name": "Bad Request",
-						"detail": "The request cannot be fulfilled due to bad syntax."
-					},
-					"time": 22,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "22",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:51:26 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "Invalid JSON provided\n",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "eecf51c7-cf35-9d45-aaa7-29067387994b",
-					"name": "Invalid JSON input",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries",
-						"headers": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"enabled": true,
-								"description": "The mime type of this content"
-							},
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "0d025fed-096a-21f0-37b7-03f893e4e50f"
-							}
-						],
-						"data": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\",\n    \"address\": \"4450 Wisconsin Ave NW, Washington,\n}",
-						"method": "POST",
-						"dataMode": "raw"
-					}
-				}
-			],
-			"rawModeData": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\",\n    \"address\": \"4450 Wisconsin Ave NW, Washington, DC 20016, United-States\",\n    \"phone\": \"+1 202-727-1488\"\n}"
-		},
-		{
-			"id": "0af07136-6c36-6259-b603-225803e3c6fd",
-			"headers": "dbscripts: {{dbscripts}}\n",
-			"url": "http://{{domain}}/api/libraries/:libraryId/books",
-			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
-			"pathVariables": {
-				"libraryId": "{{libraryId}}"
-			},
-			"method": "GET",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Array of size 3\"] = jsonData.length === 3;",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1459200484252,
-			"name": "Get one library's books",
-			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
-			"responses": [
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 36,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "420",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:27:22 GMT",
-							"description": "The date and time that the message was sent"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "[{\"id\":\"57740c24-f386-11e5-9280-8438355dc0e0\",\"name\":\"All the Rage\",\"author\":\"Courtney Summers\",\"publicationDate\":\"2015-04-14T12:47:33Z\"},{\"id\":\"96fc9801-f386-11e5-9280-8438355dc0e0\",\"name\":\"Dairy queen\",\"author\":\"Catherine Gilbert Murdock\",\"publicationDate\":\"2006-05-22T11:23:13Z\"},{\"id\":\"cc4f6dbd-f386-11e5-9280-8438355dc0e0\",\"name\":\"Kissing in America\",\"author\":\"Margo Rabb\",\"publicationDate\":\"2015-05-26T16:13:08Z\"}]",
-					"language": "javascript",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "c96eb0e2-0486-c63e-23e2-6da68b33e014",
-					"name": "Default",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "d2a19f34-da4a-3398-f75e-0c956a14100e"
-							}
-						],
-						"data": "",
-						"method": "GET",
-						"dataMode": "raw"
-					}
-				}
-			],
-			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
-		},
-		{
-			"id": "15b8cf0b-feb3-9bdf-39e4-62da259918f0",
-			"headers": "dbscripts: {{dbscripts}}\n",
-			"url": "http://{{domain}}/api/libraries/:libraryId/books",
-			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
-			"pathVariables": {
-				"libraryId": "{{libraryId}}"
-			},
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "tests[\"Status code is 201\"] = responseCode.code === 201;\ntests[\"Book-Id is present\"] = postman.getResponseHeader(\"Book-Id\");",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1459201627269,
-			"name": "Create a book",
-			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
-			"responses": [
-				{
-					"status": "",
-					"responseCode": {
-						"code": 201,
-						"name": "Created",
-						"detail": "The request has been fulfilled and resulted in a new resource being created."
-					},
-					"time": 29,
-					"headers": [
-						{
-							"name": "Book-Id",
-							"key": "Book-Id",
-							"value": "16f1445d-f52e-11e5-84ab-0242ac140002",
-							"description": "Custom header"
-						},
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "0",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:43:20 GMT",
-							"description": "The date and time that the message was sent"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "f9d892a7-f27e-ce7c-e3fe-a3f2dcb580e0",
-					"name": "Default",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "44c43965-5a51-0498-a229-e4e10b4a54c4"
-							}
-						],
-						"data": "{\n    \"name\": \"Totally Joe\",\n    \"author\": \"James Howe\",\n    \"publicationDate\": \"2007-01-24T08:56:45.768Z\"\n}",
-						"method": "POST",
-						"dataMode": "raw"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 400,
-						"name": "Bad Request",
-						"detail": "The request cannot be fulfilled due to bad syntax."
-					},
-					"time": 20,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "26",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:46:15 GMT",
-							"description": "The date and time that the message was sent"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "[\"The author is required\"]",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "32baae90-6fd4-351e-25a8-2ccd5872394f",
-					"name": "Incomplete data",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "97c3cd5d-d5b6-d0b3-d9b5-43303a8595a2"
-							}
-						],
-						"data": "{\n    \"name\": \"Totally Joe\",\n    \"publicationDate\": \"2007-01-24T08:56:45.768Z\"\n}",
-						"method": "POST",
-						"dataMode": "raw"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 400,
-						"name": "Bad Request",
-						"detail": "The request cannot be fulfilled due to bad syntax."
-					},
-					"time": 20,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "50",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:46:50 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "Invalid JSON provided or invalid date time format\n",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "7322d568-425c-e63e-f4e5-17bd2496c2fc",
-					"name": "Invalid JSON input",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "0cf723a5-7277-c2f0-829d-431741d18043"
-							}
-						],
-						"data": "{\n    \"name\": \"Totally Joe\",\n}",
-						"method": "POST",
-						"dataMode": "raw"
-					}
-				}
-			],
-			"rawModeData": "{\n    \"name\": \"Totally Joe\",\n    \"author\": \"James Howe\",\n    \"publicationDate\": \"2007-01-24T08:56:45.768Z\"\n}"
-		},
-		{
-			"id": "2ea0f810-03b3-cd29-5ea2-2e0d719f58fd",
+			"id": "09357fe9-aea6-9284-3cc4-dc87bcb9ea29",
 			"headers": "Content-Type: application/json\ndbscripts: {{dbscripts}}\n",
 			"url": "http://{{domain}}/api/libraries/:libraryId",
 			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
@@ -732,7 +56,7 @@
 			"time": 1459201971057,
 			"name": "Update a library",
 			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
 			"responses": [
 				{
 					"status": "",
@@ -776,7 +100,7 @@
 					"state": {
 						"size": "normal"
 					},
-					"id": "81d9268a-6f05-1cc0-f90b-0ca2fe20f539",
+					"id": "0789f34a-c7de-d852-9638-17937c7ef8a0",
 					"name": "Default",
 					"request": {
 						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0",
@@ -806,7 +130,8 @@
 						"data": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}",
 						"method": "PUT",
 						"dataMode": "raw"
-					}
+					},
+					"owner": "333760"
 				},
 				{
 					"status": "",
@@ -856,7 +181,7 @@
 					"state": {
 						"size": "normal"
 					},
-					"id": "7642dc7a-38f4-6d80-1cab-319a740f0617",
+					"id": "b6ff9ff8-bee8-a3b2-3701-1577d244f71f",
 					"name": "Invalid JSON input",
 					"request": {
 						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0",
@@ -886,359 +211,30 @@
 						"data": "{\n    \"name\": \"Library of Congress\",\n}",
 						"method": "PUT",
 						"dataMode": "raw"
-					}
+					},
+					"owner": "333760"
 				}
 			],
-			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}",
+			"folder": "ab2de03a-6403-08fa-52f0-45988e212b53"
 		},
 		{
-			"id": "4757b574-c378-ff7b-9ea0-2f09d78232cc",
+			"id": "0d5cf21e-4090-607c-6f0b-d345c432339b",
 			"headers": "dbscripts: {{dbscripts}}\n",
-			"url": "http://{{domain}}/api/libraries/:libraryId",
-			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
-			"pathVariables": {
-				"libraryId": "{{libraryId}}"
-			},
-			"method": "GET",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\";\n\n/*[[start postmanerator]]*/\nfunction populateNewAPIStructures() {\n    APIStructures['library'] = {\n        name: 'Library',\n        description: 'Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet',\n        fields: [\n            {name: 'id', description: 'Coluntur tamen simulatione dumtaxat ad tempus', type: 'UUID'},\n            {name: 'name', description: 'Quod si forte, ut fit plerumque', type: 'string'},\n            {name: 'address', description: 'Um intellegitur quam fuerint inopes amicorum', type: 'string'},\n            {name: 'phone', description: 'Quod Tarquinium dixisse ferunt', type: 'string'}\n        ]\n    };\n}\n/*[[end postmanerator]]*/",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1459797820886,
-			"name": "Get one library",
-			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
-			"responses": [
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 13,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "170",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:49:59 GMT",
-							"description": "The date and time that the message was sent"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"id\":\"a7c1d1d9-f385-11e5-9280-8438355dc0e0\",\"name\":\"New York Public Library\",\"address\":\"5th Ave at 42nd St, New York, NY 10018, United-States\",\"phone\":\"+1 917-275-6975\"}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "229e22f9-2684-ae57-bdfa-2d62806075bc",
-					"name": "Default",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "1fd8e5f9-efc0-c3c4-f82d-27318155db4e"
-							}
-						],
-						"data": "",
-						"method": "GET",
-						"dataMode": "raw"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 404,
-						"name": "Not Found",
-						"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
-					},
-					"time": 10,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "1",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:50:21 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "\n",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "40a5face-2a4c-39a8-c1d3-0a865ee7f427",
-					"name": "Invalid library id",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "42915ae0-5e90-1ae0-e644-909c0a612377"
-							}
-						],
-						"data": "",
-						"method": "GET",
-						"dataMode": "raw"
-					}
-				}
-			],
-			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
-		},
-		{
-			"id": "9a3fbdc9-accd-824c-f432-bd5495467c2a",
-			"headers": "dbscripts: \nCache-Control: no-cache\nPostman-Token: a5d59300-579f-48c3-ade5-6a6ae563bfd0\n",
-			"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
-			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));\npostman.setGlobalVariable(\"bookId\", (data.bookId ? data.bookId : \"57740c24-f386-11e5-9280-8438355dc0e0\"));",
+			"url": "http://{{domain}}/api/libraries",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));",
 			"pathVariables": {},
 			"method": "GET",
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"57740c24-f386-11e5-9280-8438355dc0e0\";\n\n/*[[start postmanerator]]*/\nfunction populateNewAPIStructures() {\n    APIStructures['book'] = {\n        name: 'Book',\n        description: 'Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet',\n        fields: [\n            {name: 'id', description: 'Coluntur tamen simulatione dumtaxat ad tempus', type: 'UUID'},\n            {name: 'name', description: 'Quod si forte, ut fit plerumque', type: 'string'},\n            {name: 'author', description: 'Um intellegitur quam fuerint inopes amicorum', type: 'string'},\n            {name: 'publicationDate', description: 'Quod Tarquinium dixisse ferunt', type: 'ISO datetime'}\n        ]\n    };\n}\n/*[[end postmanerator]]*/",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Array of size 3\"] = jsonData.length === 3;",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1459797721787,
-			"name": "Get one book",
+			"time": 1459186869206,
+			"name": "Get a list of libraries",
 			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
-			"responses": [
-				{
-					"status": "",
-					"responseCode": {
-						"code": 200,
-						"name": "OK",
-						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-					},
-					"time": 16,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "136",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/json",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:28:11 GMT",
-							"description": "The date and time that the message was sent"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\"id\":\"57740c24-f386-11e5-9280-8438355dc0e0\",\"name\":\"All the Rage\",\"author\":\"Courtney Summers\",\"publicationDate\":\"2015-04-14T12:47:33Z\"}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "603229b6-caab-e2f3-2e2b-d6ea613f3e32",
-					"name": "Default",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "a5d59300-579f-48c3-ade5-6a6ae563bfd0"
-							}
-						],
-						"data": "",
-						"method": "GET",
-						"dataMode": "raw"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 404,
-						"name": "Not Found",
-						"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
-					},
-					"time": 13,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "1",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:30:09 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "\n",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "7ce43c91-ceaa-59b5-42a1-bfdcaadcc750",
-					"name": "Invalid book id",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "762a5a48-9b72-0fd2-6300-8e5ae1e8a8d9"
-							}
-						],
-						"data": "",
-						"method": "GET",
-						"dataMode": "raw"
-					}
-				}
-			],
-			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
-		},
-		{
-			"id": "a59796f4-c266-955b-4495-5f1ddf540842",
-			"headers": "dbscripts: {{dbscripts}}\n",
-			"url": "http://{{domain}}/api/libraries/:libraryId/books/:bookId",
-			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));\npostman.setGlobalVariable(\"bookId\", (data.bookId ? data.bookId : \"57740c24-f386-11e5-9280-8438355dc0e0\"));",
-			"pathVariables": {
-				"libraryId": "{{libraryId}}",
-				"bookId": "{{bookId}}"
-			},
-			"method": "PUT",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"57740c24-f386-11e5-9280-8438355dc0e0\";\ntests[\"Has expected name\"] = jsonData.name === \"The lord of the rings\";",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1459201691130,
-			"name": "Update a book",
-			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
 			"responses": [
 				{
 					"status": "",
@@ -1252,7 +248,7 @@
 						{
 							"name": "Content-Length",
 							"key": "Content-Length",
-							"value": "149",
+							"value": "537",
 							"description": "The length of the response body in octets (8-bit bytes)"
 						},
 						{
@@ -1264,13 +260,13 @@
 						{
 							"name": "Date",
 							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:47:12 GMT",
+							"value": "Mon, 28 Mar 2016 21:49:48 GMT",
 							"description": "The date and time that the message was sent"
 						}
 					],
 					"cookies": [],
 					"mime": "",
-					"text": "{\"id\":\"57740c24-f386-11e5-9280-8438355dc0e0\",\"name\":\"The lord of the rings\",\"author\":\"J. R. R. Tolkien\",\"publicationDate\":\"2015-09-15T23:47:32.903Z\"}",
+					"text": "[{\"id\":\"a7c1d1d9-f385-11e5-9280-8438355dc0e0\",\"name\":\"New York Public Library\",\"address\":\"5th Ave at 42nd St, New York, NY 10018, United-States\",\"phone\":\"+1 917-275-6975\"},{\"id\":\"cdc100c8-f385-11e5-9280-8438355dc0e0\",\"name\":\"Library of Congress\",\"address\":\"101 Independence Ave SE, Washington, DC 20540, United-States\",\"phone\":\"+1 202-707-5000\"},{\"id\":\"f023a6c9-f385-11e5-9280-8438355dc0e0\",\"name\":\"Tenley-Friendship Neighborhood Library\",\"address\":\"4450 Wisconsin Ave NW, Washington, DC 20016, United-States\",\"phone\":\"+1 202-727-1488\"}]",
 					"language": "javascript",
 					"rawDataType": "text",
 					"previewType": "html",
@@ -1282,10 +278,10 @@
 					"state": {
 						"size": "normal"
 					},
-					"id": "1907e300-90e2-4b8f-b94e-084dd211eb96",
+					"id": "c494fdca-7ee0-0a12-62a4-3d3d19594b17",
 					"name": "Default",
 					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
+						"url": "http://dockerhost:8080/api/libraries",
 						"headers": [
 							{
 								"key": "dbscripts",
@@ -1300,113 +296,21 @@
 							{
 								"key": "Postman-Token",
 								"name": "Postman-Token",
-								"value": "af716a7c-d98c-df73-b143-ba438b8efe42"
+								"value": "76c0c761-5259-ef18-62f7-51e903589659"
 							}
 						],
-						"data": "{\n    \"name\": \"The lord of the rings\",\n    \"author\": \"J. R. R. Tolkien\",\n    \"publicationDate\": \"2015-09-15T23:47:32.903Z\"\n}",
-						"method": "PUT",
+						"data": "",
+						"method": "GET",
 						"dataMode": "raw"
-					}
-				},
-				{
-					"status": "",
-					"responseCode": {
-						"code": 400,
-						"name": "Bad Request",
-						"detail": "The request cannot be fulfilled due to bad syntax."
 					},
-					"time": 18,
-					"headers": [
-						{
-							"name": "Content-Length",
-							"key": "Content-Length",
-							"value": "50",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Mon, 28 Mar 2016 21:47:48 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "X-Content-Type-Options",
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "Invalid JSON provided or invalid date time format\n",
-					"language": "html",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "5b452de4-2914-2b38-ed5d-77d9168bd2b3",
-					"name": "Invalid JSON input",
-					"request": {
-						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
-						"headers": [
-							{
-								"key": "dbscripts",
-								"value": "",
-								"enabled": true
-							},
-							{
-								"key": "Cache-Control",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"name": "Postman-Token",
-								"value": "fa5cc644-0e18-d4dc-a268-733febc0ec34"
-							}
-						],
-						"data": "{\n    \"name\": \"The lord of the rings\",",
-						"method": "PUT",
-						"dataMode": "raw"
-					}
+					"owner": "333760"
 				}
 			],
-			"rawModeData": "{\n    \"name\": \"The lord of the rings\",\n    \"author\": \"J. R. R. Tolkien\",\n    \"publicationDate\": \"2015-09-15T23:47:32.903Z\"\n}"
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}",
+			"folder": "ab2de03a-6403-08fa-52f0-45988e212b53"
 		},
 		{
-			"id": "acfef670-b3b7-866e-08b5-60c2a1c1618c",
-			"headers": "dbscripts: reset|data\n",
-			"url": "http://{{domain}}",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1459020290111,
-			"name": "Reset database",
-			"description": "",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
-			"responses": [],
-			"rawModeData": ""
-		},
-		{
-			"id": "b335b76c-89b5-dc3c-2faa-33a3cf27baf6",
+			"id": "2d41518c-5e9b-1f09-e5e5-6eef43f13613",
 			"headers": "dbscripts: {{dbscripts}}\n",
 			"url": "http://{{domain}}/api/libraries/:libraryId/books/:bookId",
 			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));\npostman.setGlobalVariable(\"bookId\", (data.bookId ? data.bookId : \"57740c24-f386-11e5-9280-8438355dc0e0\"));",
@@ -1424,7 +328,7 @@
 			"time": 1459201749898,
 			"name": "Delete a book",
 			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
 			"responses": [
 				{
 					"status": "",
@@ -1456,7 +360,7 @@
 					"state": {
 						"size": "normal"
 					},
-					"id": "b1a5a770-c2ff-b1a2-d541-98ccaa530bb3",
+					"id": "80db4efa-6edf-b38c-8ca8-919572b8c31d",
 					"name": "Default",
 					"request": {
 						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
@@ -1480,7 +384,8 @@
 						"data": "",
 						"method": "DELETE",
 						"dataMode": "raw"
-					}
+					},
+					"owner": "333760"
 				},
 				{
 					"status": "",
@@ -1530,7 +435,7 @@
 					"state": {
 						"size": "normal"
 					},
-					"id": "370385d7-5b84-8f8a-8279-4d7b10bf8163",
+					"id": "e4058dd3-e165-9e6a-4b8e-7699e08784a2",
 					"name": "Invalid book id",
 					"request": {
 						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
@@ -1554,13 +459,352 @@
 						"data": "",
 						"method": "DELETE",
 						"dataMode": "raw"
-					}
+					},
+					"owner": "333760"
 				}
 			],
-			"rawModeData": ""
+			"rawModeData": "",
+			"folder": "f669a26d-dca0-b96f-4464-edfc3d1811c9"
 		},
 		{
-			"id": "be3c5a7b-b730-ef84-351d-025bf3b7c347",
+			"id": "4d044bc7-0eb2-1155-b491-411213691f05",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books/:bookId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));\npostman.setGlobalVariable(\"bookId\", (data.bookId ? data.bookId : \"57740c24-f386-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}",
+				"bookId": "{{bookId}}"
+			},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"57740c24-f386-11e5-9280-8438355dc0e0\";\ntests[\"Has expected name\"] = jsonData.name === \"The lord of the rings\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459201691130,
+			"name": "Update a book",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 23,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "149",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:47:12 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"id\":\"57740c24-f386-11e5-9280-8438355dc0e0\",\"name\":\"The lord of the rings\",\"author\":\"J. R. R. Tolkien\",\"publicationDate\":\"2015-09-15T23:47:32.903Z\"}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "b77d0e3e-451f-313d-e93a-2077bd4c2796",
+					"name": "Default",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "af716a7c-d98c-df73-b143-ba438b8efe42"
+							}
+						],
+						"data": "{\n    \"name\": \"The lord of the rings\",\n    \"author\": \"J. R. R. Tolkien\",\n    \"publicationDate\": \"2015-09-15T23:47:32.903Z\"\n}",
+						"method": "PUT",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 400,
+						"name": "Bad Request",
+						"detail": "The request cannot be fulfilled due to bad syntax."
+					},
+					"time": 18,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "50",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:47:48 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "Invalid JSON provided or invalid date time format\n",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "3a886154-da32-8842-d463-7a064d02c46e",
+					"name": "Invalid JSON input",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "fa5cc644-0e18-d4dc-a268-733febc0ec34"
+							}
+						],
+						"data": "{\n    \"name\": \"The lord of the rings\",",
+						"method": "PUT",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"The lord of the rings\",\n    \"author\": \"J. R. R. Tolkien\",\n    \"publicationDate\": \"2015-09-15T23:47:32.903Z\"\n}",
+			"folder": "f669a26d-dca0-b96f-4464-edfc3d1811c9"
+		},
+		{
+			"id": "8245f88f-0b48-cd52-a856-11704c707cec",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books/:bookId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));\npostman.setGlobalVariable(\"bookId\", (data.bookId ? data.bookId : \"57740c24-f386-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}",
+				"bookId": "{{bookId}}"
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"57740c24-f386-11e5-9280-8438355dc0e0\";\n\n/*[[start postmanerator]]*/\nfunction populateNewAPIStructures() {\n    APIStructures['book'] = {\n        name: 'Book',\n        description: 'Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet',\n        fields: [\n            {name: 'id', description: 'Coluntur tamen simulatione dumtaxat ad tempus', type: 'UUID'},\n            {name: 'name', description: 'Quod si forte, ut fit plerumque', type: 'string'},\n            {name: 'author', description: 'Um intellegitur quam fuerint inopes amicorum', type: 'string'},\n            {name: 'publicationDate', description: 'Quod Tarquinium dixisse ferunt', type: 'ISO datetime'}\n        ]\n    };\n}\n/*[[end postmanerator]]*/",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1465147284181,
+			"name": "Get one book",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 16,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "136",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:28:11 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"id\":\"57740c24-f386-11e5-9280-8438355dc0e0\",\"name\":\"All the Rage\",\"author\":\"Courtney Summers\",\"publicationDate\":\"2015-04-14T12:47:33Z\"}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "4a6f7810-0b5a-9db4-fe77-0c84bebad35d",
+					"name": "Default",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-8438355dc0e0",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "a5d59300-579f-48c3-ade5-6a6ae563bfd0"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 404,
+						"name": "Not Found",
+						"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+					},
+					"time": 13,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "1",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:30:09 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "\n",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "746e556a-cf94-c117-7afd-3bd5155c65fe",
+					"name": "Invalid book id",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books/57740c24-f386-11e5-9280-",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "762a5a48-9b72-0fd2-6300-8e5ae1e8a8d9"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+		},
+		{
+			"id": "8761d62b-edb8-affb-8140-39ea021b5989",
 			"headers": "dbscripts: {{dbscripts}}\n",
 			"url": "http://{{domain}}/api/libraries/:libraryId",
 			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
@@ -1577,7 +821,7 @@
 			"time": 1459186993217,
 			"name": "Delete a library",
 			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
-			"collectionId": "eb741874-7a9f-310c-7ce4-0f760b102521",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
 			"responses": [
 				{
 					"status": "",
@@ -1609,7 +853,7 @@
 					"state": {
 						"size": "normal"
 					},
-					"id": "9ac7ef92-0750-4649-2b61-3d045ba71c8b",
+					"id": "ef72279d-3556-79da-0658-eb56a4b2b13a",
 					"name": "Default",
 					"request": {
 						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0",
@@ -1633,7 +877,8 @@
 						"data": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}",
 						"method": "DELETE",
 						"dataMode": "raw"
-					}
+					},
+					"owner": "333760"
 				},
 				{
 					"status": "",
@@ -1683,7 +928,7 @@
 					"state": {
 						"size": "normal"
 					},
-					"id": "7d6c897e-aaa5-96b9-8870-6997ce6b1106",
+					"id": "303b0c1c-e94d-506a-c9bb-e679557d291e",
 					"name": "Invalid library id",
 					"request": {
 						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0",
@@ -1707,10 +952,775 @@
 						"data": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}",
 						"method": "DELETE",
 						"dataMode": "raw"
-					}
+					},
+					"owner": "333760"
 				}
 			],
-			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}"
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}",
+			"folder": "ab2de03a-6403-08fa-52f0-45988e212b53"
+		},
+		{
+			"id": "94dbecc2-f04f-1d14-38b5-e3c612ad9300",
+			"headers": "Content-Type: application/json\ndbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 201\"] = responseCode.code === 201;\ntests[\"Library-Id is present\"] = postman.getResponseHeader(\"Library-Id\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459201903204,
+			"name": "Create a new library",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 13,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "0",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:51:00 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Library-Id",
+							"key": "Library-Id",
+							"value": "2934ee4a-f52f-11e5-84ab-0242ac140002",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "2f23fb7b-bdd1-fafd-3aee-ab51d304f2d9",
+					"name": "Default",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "a5b06b3b-62ef-fa32-48b3-73bf0a125f94"
+							}
+						],
+						"data": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\",\n    \"address\": \"4450 Wisconsin Ave NW, Washington, DC 20016, United-States\",\n    \"phone\": \"+1 202-727-1488\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 400,
+						"name": "Bad Request",
+						"detail": "The request cannot be fulfilled due to bad syntax."
+					},
+					"time": 23,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "51",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:51:15 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "[\"The address is required\",\"The phone is required\"]",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "e94b0309-040d-4c6c-5f85-7e2c592f4ee8",
+					"name": "Invalid input data",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "c1ea68fa-acc5-3787-f58a-4c9216499e6f"
+							}
+						],
+						"data": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 400,
+						"name": "Bad Request",
+						"detail": "The request cannot be fulfilled due to bad syntax."
+					},
+					"time": 22,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "22",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:51:26 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "Invalid JSON provided\n",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "7039e433-1ec9-6f26-2ecc-023c6aa8c4cd",
+					"name": "Invalid JSON input",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "0d025fed-096a-21f0-37b7-03f893e4e50f"
+							}
+						],
+						"data": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\",\n    \"address\": \"4450 Wisconsin Ave NW, Washington,\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Tenley-Friendship Neighborhood Library\",\n    \"address\": \"4450 Wisconsin Ave NW, Washington, DC 20016, United-States\",\n    \"phone\": \"+1 202-727-1488\"\n}",
+			"folder": "ab2de03a-6403-08fa-52f0-45988e212b53"
+		},
+		{
+			"id": "bb6d8cfa-22fc-1711-98ee-d09c751aa690",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}"
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Array of size 3\"] = jsonData.length === 3;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459200484252,
+			"name": "Get one library's books",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 36,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "420",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:27:22 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "[{\"id\":\"57740c24-f386-11e5-9280-8438355dc0e0\",\"name\":\"All the Rage\",\"author\":\"Courtney Summers\",\"publicationDate\":\"2015-04-14T12:47:33Z\"},{\"id\":\"96fc9801-f386-11e5-9280-8438355dc0e0\",\"name\":\"Dairy queen\",\"author\":\"Catherine Gilbert Murdock\",\"publicationDate\":\"2006-05-22T11:23:13Z\"},{\"id\":\"cc4f6dbd-f386-11e5-9280-8438355dc0e0\",\"name\":\"Kissing in America\",\"author\":\"Margo Rabb\",\"publicationDate\":\"2015-05-26T16:13:08Z\"}]",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "12173db5-06c0-777a-b447-016008d9239f",
+					"name": "Default",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "d2a19f34-da4a-3398-f75e-0c956a14100e"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}",
+			"folder": "f669a26d-dca0-b96f-4464-edfc3d1811c9"
+		},
+		{
+			"id": "cac1eeba-a7b3-4297-1505-7878995814f4",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId/books",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}"
+			},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 201\"] = responseCode.code === 201;\ntests[\"Book-Id is present\"] = postman.getResponseHeader(\"Book-Id\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459201627269,
+			"name": "Create a book",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 29,
+					"headers": [
+						{
+							"name": "Book-Id",
+							"key": "Book-Id",
+							"value": "16f1445d-f52e-11e5-84ab-0242ac140002",
+							"description": "Custom header"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "0",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:43:20 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "e308c333-105f-3886-f215-d292a9553a74",
+					"name": "Default",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "44c43965-5a51-0498-a229-e4e10b4a54c4"
+							}
+						],
+						"data": "{\n    \"name\": \"Totally Joe\",\n    \"author\": \"James Howe\",\n    \"publicationDate\": \"2007-01-24T08:56:45.768Z\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 400,
+						"name": "Bad Request",
+						"detail": "The request cannot be fulfilled due to bad syntax."
+					},
+					"time": 20,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "26",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:46:15 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "[\"The author is required\"]",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "046e0b59-3776-1bd3-b5ec-bb0fac7ec59a",
+					"name": "Incomplete data",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "97c3cd5d-d5b6-d0b3-d9b5-43303a8595a2"
+							}
+						],
+						"data": "{\n    \"name\": \"Totally Joe\",\n    \"publicationDate\": \"2007-01-24T08:56:45.768Z\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 400,
+						"name": "Bad Request",
+						"detail": "The request cannot be fulfilled due to bad syntax."
+					},
+					"time": 20,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "50",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:46:50 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "Invalid JSON provided or invalid date time format\n",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "33a0251d-eeaa-1341-4d97-a62e111c2fc0",
+					"name": "Invalid JSON input",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0/books",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "0cf723a5-7277-c2f0-829d-431741d18043"
+							}
+						],
+						"data": "{\n    \"name\": \"Totally Joe\",\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Totally Joe\",\n    \"author\": \"James Howe\",\n    \"publicationDate\": \"2007-01-24T08:56:45.768Z\"\n}",
+			"folder": "f669a26d-dca0-b96f-4464-edfc3d1811c9"
+		},
+		{
+			"id": "e32a5c08-f9ef-d803-e80c-38954dddf287",
+			"headers": "dbscripts: {{dbscripts}}\n",
+			"url": "http://{{domain}}/api/libraries/:libraryId",
+			"preRequestScript": "postman.setGlobalVariable(\"dbscripts\", (data.dbScripts ? data.dbScripts : \"\"));\npostman.setGlobalVariable(\"libraryId\", (data.library ? data.libraryId : \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\"));",
+			"pathVariables": {
+				"libraryId": "{{libraryId}}"
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Content-Type is present\"] = (postman.getResponseHeader(\"Content-Type\") === \"application/json\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Has expected id\"] = jsonData.id === \"a7c1d1d9-f385-11e5-9280-8438355dc0e0\";\n\n/*[[start postmanerator]]*/\nfunction populateNewAPIStructures() {\n    APIStructures['library'] = {\n        name: 'Library',\n        description: 'Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet',\n        fields: [\n            {name: 'id', description: 'Coluntur tamen simulatione dumtaxat ad tempus', type: 'UUID'},\n            {name: 'name', description: 'Quod si forte, ut fit plerumque', type: 'string'},\n            {name: 'address', description: 'Um intellegitur quam fuerint inopes amicorum', type: 'string'},\n            {name: 'phone', description: 'Quod Tarquinium dixisse ferunt', type: 'string'}\n        ]\n    };\n}\n/*[[end postmanerator]]*/",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459797820886,
+			"name": "Get one library",
+			"description": "Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.",
+			"collectionId": "5c07b347-8bd3-f7fc-9cbf-d84b9d592dbf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 13,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "170",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:49:59 GMT",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"id\":\"a7c1d1d9-f385-11e5-9280-8438355dc0e0\",\"name\":\"New York Public Library\",\"address\":\"5th Ave at 42nd St, New York, NY 10018, United-States\",\"phone\":\"+1 917-275-6975\"}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "356d058f-8c25-576d-8564-c10572d89dea",
+					"name": "Default",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "1fd8e5f9-efc0-c3c4-f82d-27318155db4e"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 404,
+						"name": "Not Found",
+						"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+					},
+					"time": 10,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "1",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 28 Mar 2016 21:50:21 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "\n",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "f624c6e9-71d5-5e3f-d863-26774caa77a1",
+					"name": "Invalid library id",
+					"request": {
+						"url": "http://dockerhost:8080/api/libraries/a7c1d1d9-f385-11e5-9280-8438355dc0e0",
+						"headers": [
+							{
+								"key": "dbscripts",
+								"value": "",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "42915ae0-5e90-1ae0-e644-909c0a612377"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "raw"
+					},
+					"owner": "333760"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Library of Congress\",\n    \"address\": \"101 Independence Ave SE, Washington, DC 20540, United-States\",\n    \"phone\": \"+1 202-707-5000\"\n}",
+			"folder": "ab2de03a-6403-08fa-52f0-45988e212b53"
 		}
 	]
 }
